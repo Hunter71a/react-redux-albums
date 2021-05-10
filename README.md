@@ -16,7 +16,7 @@ You will also see any lint errors in the console.
 
 ### `yarn server`
 
-Runs json-server to db.json in the root level
+Runs json-server to db.json in the root level.
 Open [http://localhost:3004](http://localhost:3004) to view it in the browser.
 
 The page will reload if you make edits.\
