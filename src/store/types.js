@@ -1,0 +1,1 @@
+export const GET_ARTISTS_ALL ='get_artists_all';
