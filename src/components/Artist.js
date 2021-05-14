@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-class artists extends Component {
+class Artists extends Component {
     render(){
         return(
             <div>
@@ -10,4 +10,4 @@ class artists extends Component {
     }
 }
 
-export default artists;
+export default Artists;

@@ -1,13 +1,21 @@
-import React, {Component} from 'react';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { artistsListAll } from "../store/actions";
 
 class Home extends Component {
-    render(){
-        return(
-            <div>
-                HOME PAGE
-            </div>
-        )
-    }
+  componentDidMount() {
+    this.props.dispatch(artistsListAll());
+  }
+
+  render() {
+    return <div>HOME PAGE FOR CHUMPS!</div>;
+  }
 }
 
-export default Home;
+function mapStateToProps(state) {
+  return {
+    artists: state.artists,
+  };
+}
+
+export default connect(mapStateToProps)(Home);

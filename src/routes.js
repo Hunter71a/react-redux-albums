@@ -7,8 +7,10 @@ import Artist from "./components/Artist";
 const Routes = () => {
   return (
     <Switch>
+      <Route path="/artist/:id" component={Artist} />
       <Route path="/" component={Home} />
-      <Route path="/artist" component={Artist} />
     </Switch>
   );
 };
+
+export default Routes;
