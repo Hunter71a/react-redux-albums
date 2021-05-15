@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { connect } from "react-redux";
-import { artistsListAll } from "../store/actions";
-import { Link } from "react-router-dom";
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { artistsListAll, artistListSearch } from '../store/actions';
+import { Link } from 'react-router-dom';
 
 class Home extends Component {
   componentDidMount() {
@@ -14,14 +14,18 @@ class Home extends Component {
           <Link to={`/artist/${item.id}`} key={item.id} className="artist_item">
             <div
               className="cover"
-              style={{ background: `url(/images/${item.cover})` }}>
-            <div>
-                {item.name}
-            </div>
+              style={{ background: `url(/images/${item.cover})` }}
+            >
+              <div>{item.name}</div>
             </div>
           </Link>
         ))
       : null;
+
+  getKeywords = (event) => {
+    let key = event.target.value;
+    this.props.dispatch(artistListSearch(key));
+  };
 
   render() {
     return (
