@@ -1,12 +1,20 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import { connect } from 'react-redux';
 import { artistsListAll, artistListSearch } from '../store/actions';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
+    state = {
+        textInput : ''  
+    }
+
   componentDidMount() {
     this.props.dispatch(artistsListAll());
   }
+
+  handleTextChange = (textInput) => {
+    this.setState({textInput});
+  };
 
   showArtistsAll = (data) =>
     data
