@@ -4,16 +4,21 @@ import { artistsListAll, artistListSearch } from '../store/actions';
 import { Link } from 'react-router-dom';
 
 class Home extends Component {
-    state = {
-        textInput : ''  
-    }
+  state = {
+    textInput: '',
+  };
 
   componentDidMount() {
     this.props.dispatch(artistsListAll());
   }
 
   handleTextChange = (textInput) => {
-    this.setState({textInput});
+    this.setState({ textInput });
+  };
+
+  getKeywords = (event) => {
+    let key = event.target.value;
+    this.props.dispatch(artistListSearch(key));
   };
 
   showArtistsAll = (data) =>
@@ -29,11 +34,6 @@ class Home extends Component {
           </Link>
         ))
       : null;
-
-  getKeywords = (event) => {
-    let key = event.target.value;
-    this.props.dispatch(artistListSearch(key));
-  };
 
   render() {
     return (
