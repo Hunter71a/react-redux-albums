@@ -3,7 +3,7 @@ import {
   GET_ARTISTS_ALL,
   GET_ARTISTS_SEARCH,
   GET_ARTIST_DETAIL,
-} from "../types";
+} from '../types';
 
 export default function (state = {}, action) {
   switch (action.type) {
