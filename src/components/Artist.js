@@ -24,13 +24,13 @@ class Artist extends Component {
 
   render() {
     console.log(this.props);
-    return <>{this.artistTemplate(this.props.artistData)}</>;
+    return <>{this.artistTemplate(this.props.artists)}</>;
   }
 }
 
 function mapStateToProps(state) {
   return {
-    artistData: state.artist,
+    artists: state.artists,
   };
 }
 
