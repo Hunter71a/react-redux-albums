@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { artistDetail } from '../store/actions';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { artistDetail } from "../store/actions";
 
 class Artist extends Component {
   componentDidMount() {
@@ -17,7 +17,20 @@ class Artist extends Component {
             background: `url(/images/${data.artistData[0].cover})`,
           }}
         >
-          <Link>Back Home</Link>
+          <Link to="/">Back Home</Link>
+          <div className="name">{data.artistData[0].name}</div>
+        </div>
+        <div className="artist_description">
+          <p>{data.artistData[0].bio}</p>
+          <div className="tags">
+            <div>
+              <strong>Style:</strong> {data.artistData[0].style}
+            </div>
+          </div>
+        </div>
+        <div className="artist_album_list">
+          {statusbar.artistData[0].albums ? 
+          data.artistData[0].albums.map()}
         </div>
       </div>
     ) : null;
