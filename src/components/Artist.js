@@ -10,6 +10,7 @@ class Artist extends Component {
 
   artistTemplate = (data) =>
     data.artistData ? (
+      
       <div className="artist_view">
         <div
           className="artist_background"
@@ -26,14 +27,21 @@ class Artist extends Component {
             <div>
               <strong>Style:</strong> {data.artistData[0].style}
             </div>
-          </div>
-        </div>
+          </div>      
         <div className="artist_album_list">
-          {statusbar.artistData[0].albums ? 
-          data.artistData[0].albums.map()}
-        </div>
-      </div>
-    ) : null;
+          {data.artistData[0].albums ? 
+            data.artistData[0].albums.map(item=>(
+              <div key={item.cover} className="albums">
+              <div 
+                className="cover"
+                style={{
+                  background:`url(images/albums/${data.artistData[0].cover})`
+                }}>
+              </div>
+          ))
+          :null
+          </div>
+    )
 
   render() {
     console.log(this.props);
